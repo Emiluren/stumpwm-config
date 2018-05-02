@@ -1,8 +1,11 @@
 (in-package :stumpwm)
 
+;; "Official" modules
 (load-module "battery-portable")
-(load-module "volume")
 (load-module "ttf-fonts")
+
+;; Personal modules
+(load-module "volume")
 
 ;; Use the menu key as prefix
 (set-prefix-key (kbd "Menu"))
