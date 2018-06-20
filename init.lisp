@@ -45,21 +45,22 @@
 (enable-mode-line-on-all)
 
 ;; Create a swank server so we can connect to it through slime
-(require :swank)
-(let ((server-running nil))
-  (defcommand swank () ()
-    "Toggle the swank server on/off"
-    (if server-running
-        (progn
-          (swank:stop-server 4005)
-          (message "Stopping swank.")
-          (setf server-running nil))
-        (progn
-          (swank:create-server :port 4005
-                               :style swank:*communication-style*
-                               :dont-close t)
-          (message "Starting swank on localhost:4005.")
-          (setf server-running t)))))
+;; TODO: change to slynk
+;; (require :swank)
+;; (let ((server-running nil))
+;;   (defcommand slynk () ()
+;;     "Toggle the swank server on/off"
+;;     (if server-running
+;;         (progn
+;;           (swank:stop-server 4005)
+;;           (message "Stopping swank.")
+;;           (setf server-running nil))
+;;         (progn
+;;           (swank:create-server :port 4005
+;;                                :style swank:*communication-style*
+;;                                :dont-close t)
+;;           (message "Starting swank on localhost:4005.")
+;;           (setf server-running t)))))
 
 ;; Root key bindings
 ;; Change the default terminal to urxvt
