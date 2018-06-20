@@ -22,7 +22,9 @@
       (with-timeout (0.1)
         (get-volume))
     (timeout-error ()
-      "TIMEOUT")))
+      "TIMEOUT")
+    (error ()
+      "ERROR")))
 
 (defun fmt-vol (ml)
   (declare (ignore ml))
