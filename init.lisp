@@ -1,5 +1,10 @@
 (in-package :stumpwm)
 
+;; (setf *debug-level* 1)
+;; (redirect-all-output (data-dir-file "debug-output" "txt"))
+
+(set-module-dir "/home/em/.stumpwm.d/modules")
+
 ;; "Official" modules
 (load-module "battery-portable")
 (load-module "ttf-fonts")
@@ -19,7 +24,9 @@
 ;; Keep windows where they are when creating new frames
 (setf *new-frame-action* :empty)
 
-;; The default font suddenly made everything invisible
+;; Open new windows in empty frames if there are any
+(setq *new-window-preferred-frame* '(:empty :focused))
+
 (set-font (make-instance 'xft:font
                          :family "Anonymous Pro"
                          :subfamily "Regular"
