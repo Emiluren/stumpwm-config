@@ -72,6 +72,11 @@
 ;; Use other window instead of pull-hidden-other
 (define-key *root-map* (kbd "Menu") "other-in-frame")
 
+;; Add some group switching keys that are easy on my laptop
+(define-key *root-map* (kbd "XF86AudioMute") "gselect 1")
+(define-key *root-map* (kbd "XF86AudioLowerVolume") "gselect 2")
+(define-key *root-map* (kbd "XF86AudioRaiseVolume") "gselect 3")
+
 ;; Top key bindings
 ;; Media keys
 (define-key *top-map* (kbd "XF86AudioLowerVolume")
@@ -86,9 +91,11 @@
 (define-key *top-map* (kbd "XF86MonBrightnessUp")
   "exec xbacklight -inc 5")
 
-;; Stop Fn key from interfering with describe-key in Emacs
-(defcommand do-nothing () ())
-(define-key *top-map* (kbd "XF86WakeUp") "do-nothing")
+;; Use "F8 without Fn" to next window
+(define-key *top-map* (kbd "C-M-TAB") "next")
+
+;; Use f10 without fn for network-manager
+(define-key *top-map* (kbd "s-p") "exec networkmanager_dmenu")
 
 ;; Vi keys for moving around
 (define-key *top-map* (kbd "s-h") "move-focus left")
