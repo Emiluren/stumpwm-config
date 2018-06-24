@@ -118,6 +118,11 @@
 (define-key *top-map* (kbd "s-J") "move-window down")
 (define-key *top-map* (kbd "s-K") "move-window up")
 
+(define-key *top-map* (kbd "M-s-h") "resize -10 0")
+(define-key *top-map* (kbd "M-s-l") "resize 10 0")
+(define-key *top-map* (kbd "M-s-j") "resize 0 -10")
+(define-key *top-map* (kbd "M-s-k") "resize 0 10")
+
 ;; skippy-xd is a sort of window menu
 (define-key *top-map* (kbd "s-g") "exec skippy-xd")
 
