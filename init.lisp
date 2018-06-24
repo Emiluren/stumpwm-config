@@ -20,6 +20,8 @@
 
 ;; Prevent windows like Emacs from getting a giant border
 (setf *window-border-style* :thin)
+;; Emacs tries to raise window for compiling windows and all kinds of stuff
+(push '(:class "Emacs") stumpwm:*deny-raise-request*)
 
 ;; Keep windows where they are when creating new frames
 (setf *new-frame-action* :empty)
