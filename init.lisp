@@ -8,9 +8,12 @@
 ;; "Official" modules
 (load-module "battery-portable")
 (load-module "ttf-fonts")
+(load-module "mpd")
 
 ;; Personal modules
 (load-module "volume")
+
+(mpd:mpd-connect)
 
 ;; Use the menu key as prefix
 (set-prefix-key (kbd "Menu"))
@@ -100,6 +103,8 @@
   "exec xbacklight -dec 5")
 (define-key *top-map* (kbd "XF86MonBrightnessUp")
   "exec xbacklight -inc 5")
+
+(define-key *top-map* (kbd "s-m") mpd:*mpd-map*)
 
 ;; Use "F8 without Fn" to next window
 (define-key *top-map* (kbd "C-M-TAB") "next")
