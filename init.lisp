@@ -94,6 +94,9 @@
 (define-key *root-map* (kbd "XF86AudioLowerVolume") "gselect 2")
 (define-key *root-map* (kbd "XF86AudioRaiseVolume") "gselect 3")
 
+;; Create new floating group
+(define-key *groups-map* (kbd "f") "gnew-float")
+
 ;; Top key bindings
 ;; Media keys
 (define-key *top-map* (kbd "XF86AudioLowerVolume")
