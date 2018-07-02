@@ -13,6 +13,10 @@
 ;; Personal modules
 (load-module "volume")
 
+;; Other modules
+(load-module "stumpwm-base16")
+
+(stumpwm-base16:load-theme "default-light")
 (mpd:mpd-connect)
 
 ;; Use the menu key as prefix
