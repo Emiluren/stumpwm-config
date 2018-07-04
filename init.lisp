@@ -50,6 +50,9 @@
 
 (add-screen-mode-line-formatter #\T #'fmt-time)
 
+;; Prevent window titles from taking too much space on the mode line
+(setq *window-format* "%m%n%s%20t")
+
 ;; turn on the mode line for all heads
 (setf *screen-mode-line-format* "[%n] %v ^>Vol: %V | Bat: %B | %T")
 
