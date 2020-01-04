@@ -14,13 +14,13 @@
 (load-module "volume")
 
 ;; Other modules
-(load-module "stumpwm-base16")
+;;(load-module "stumpwm-base16")
 
-(stumpwm-base16:load-theme "default-light")
+;;(stumpwm-base16:load-theme "default-light")
 (mpd:mpd-connect)
 
 ;; Use the menu key as prefix
-(set-prefix-key (kbd "Menu"))
+(set-prefix-key (kbd "s-m"))
 
 ;; Make focus follow mouse
 (setf *mouse-focus-policy* :sloppy)
@@ -83,14 +83,15 @@
 
 ;; Root key bindings
 ;; Change the default terminal to urxvt
-(define-key *root-map* (kbd "c") "exec urxvt -e fish")
+;;(define-key *root-map* (kbd "c") "exec SHELL=/usr/bin/fish urxvt")
+(define-key *root-map* (kbd "c") "exec urxvt")
 (define-key *root-map* (kbd "C-c") "exec urxvt")
 
 ;; F11 doesn't really work with fn
 (define-key *root-map* (kbd "z") "fullscreen")
 
 ;; Use other window instead of pull-hidden-other
-(define-key *root-map* (kbd "Menu") "other-in-frame")
+;;(define-key *root-map* (kbd "Menu") "other-in-frame")
 
 ;; Add some group switching keys that are easy on my laptop
 (define-key *root-map* (kbd "XF86AudioMute") "gselect 1")
@@ -123,20 +124,20 @@
 (define-key *top-map* (kbd "s-p") "exec networkmanager_dmenu")
 
 ;; Vi keys for moving around
-(define-key *top-map* (kbd "s-h") "move-focus left")
-(define-key *top-map* (kbd "s-l") "move-focus right")
-(define-key *top-map* (kbd "s-j") "move-focus down")
-(define-key *top-map* (kbd "s-k") "move-focus up")
+(define-key *top-map* (kbd "s-n") "move-focus left")
+(define-key *top-map* (kbd "s-o") "move-focus right")
+(define-key *top-map* (kbd "s-e") "move-focus down")
+(define-key *top-map* (kbd "s-i") "move-focus up")
 
-(define-key *top-map* (kbd "s-H") "move-window left")
-(define-key *top-map* (kbd "s-L") "move-window right")
-(define-key *top-map* (kbd "s-J") "move-window down")
-(define-key *top-map* (kbd "s-K") "move-window up")
+(define-key *top-map* (kbd "s-N") "move-window left")
+(define-key *top-map* (kbd "s-O") "move-window right")
+(define-key *top-map* (kbd "s-E") "move-window down")
+(define-key *top-map* (kbd "s-I") "move-window up")
 
-(define-key *top-map* (kbd "M-s-h") "resize -10 0")
-(define-key *top-map* (kbd "M-s-l") "resize 10 0")
-(define-key *top-map* (kbd "M-s-j") "resize 0 -10")
-(define-key *top-map* (kbd "M-s-k") "resize 0 10")
+(define-key *top-map* (kbd "M-s-n") "resize -10 0")
+(define-key *top-map* (kbd "M-s-o") "resize 10 0")
+(define-key *top-map* (kbd "M-s-e") "resize 0 -10")
+(define-key *top-map* (kbd "M-s-i") "resize 0 10")
 
 ;; skippy-xd is a sort of window menu
 (define-key *top-map* (kbd "s-g") "exec skippy-xd")
